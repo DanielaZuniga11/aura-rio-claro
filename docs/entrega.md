@@ -33,8 +33,6 @@ El asistente busca:
 
 ## 3. Solución desarrollada
 
-## 3. Solución desarrollada
-
 Se desarrolló **AURA (Asistente Unificado de Respuestas y Atención)**, un asistente corporativo basado en Azure AI Foundry y Azure OpenAI que permite consultar información empresarial mediante lenguaje natural. 
 
 La solución se presenta mediante una aplicación web que integra dos funcionalidades principales: un asistente corporativo para consultar información de la empresa y un módulo para el procesamiento inteligente de facturas mediante Azure AI Document Intelligence.
@@ -91,7 +89,7 @@ Para el desarrollo de AURA se utilizaron las siguientes herramientas y servicios
 - **Microsoft Azure:** plataforma de servicios en la nube.
 - **Azure AI Foundry:** configuración y administración del agente inteligente.
 - **Azure OpenAI:** modelo de inteligencia artificial utilizado para comprender las consultas y generar respuestas.
-- **Azure AI Document Intelligence:** servicio considerado para el análisis y extracción de información de documentos y facturas.
+- **Azure AI Document Intelligence:** servicio utilizado para analizar facturas PDF y extraer información como número de factura, fecha e importe total.
 - **Azure App Service:** publicación y alojamiento de la aplicación web.
 - **Visual Studio Code:** entorno de desarrollo utilizado para editar y organizar el proyecto.
 - **GitHub Copilot:** apoyo en la generación, adaptación y corrección del código.
@@ -119,7 +117,15 @@ También se verificó el funcionamiento de la navegación entre la página princ
 
 El prototipo fue probado localmente y posteriormente publicado como una aplicación web accesible mediante internet.
 
-El módulo de facturas cuenta con una interfaz de demostración para la carga y presentación del flujo de análisis documental. La integración con Azure AI Document Intelligence queda sujeta a su implementación y validación.
+El módulo de facturas fue validado mediante Azure AI Document Intelligence utilizando el modelo preconfigurado Invoice.
+
+Durante las pruebas se procesaron facturas PDF ficticias, logrando extraer correctamente campos como:
+
+- Invoice ID
+- Invoice Date
+- Invoice Total
+
+Los resultados obtenidos demostraron la capacidad del servicio para identificar información estructurada contenida en documentos empresariales.
 
 ## 6. Uso responsable de la inteligencia artificial
 
@@ -157,9 +163,15 @@ La solución está compuesta por una aplicación web que integra dos módulos in
 1. El usuario ingresa al módulo de facturas.
 2. Selecciona un documento PDF para cargarlo.
 3. La interfaz presenta el flujo de análisis documental.
-4. Se contempla el uso de Azure AI Document Intelligence para identificar información relevante de la factura.
+4. Se utilizó Azure AI Document Intelligence para analizar facturas PDF mediante el modelo preconstruido Invoice.
 
-La integración completa con el servicio de análisis documental queda pendiente de implementación y validación.
+Durante las pruebas se identificaron correctamente datos relevantes como:
+
+- Número de factura
+- Fecha
+- Total de la factura
+
+La validación se realizó utilizando documentos PDF de ejemplo y facturas ficticias generadas para el proyecto.
 
 ### 7.3. Componentes principales
 
@@ -218,7 +230,28 @@ Evidencia del entorno de Document Intelligence Studio considerado para el proces
 
 ![Document Intelligence Studio](evidencias/document-intelligence-studio.png)
 
-## 10. Conclusiones
+## 10. Resultados obtenidos
+
+La implementación de **AURA** permitió centralizar el acceso a la información empresarial de Distribuidora Río Claro.
+
+Mediante **Azure AI Foundry** y **Azure OpenAI** se logró desarrollar un asistente capaz de responder consultas sobre inventario, pedidos, devoluciones e información corporativa.
+
+Asimismo, **Azure AI Document Intelligence** permitió validar el procesamiento inteligente de facturas mediante la extracción automática de información documental.
+
+El prototipo fue publicado exitosamente en **Azure App Service**, permitiendo el acceso mediante Internet a través de una URL pública.
+
+La solución integra capacidades de inteligencia artificial generativa, búsqueda basada en conocimiento empresarial y procesamiento inteligente de documentos, proporcionando una plataforma inicial para la transformación digital de la organización.
+
+Entre los principales beneficios obtenidos destacan:
+
+- Centralización de la información empresarial.
+- Reducción del tiempo de búsqueda de información.
+- Acceso simplificado mediante lenguaje natural.
+- Validación del uso de inteligencia artificial generativa en escenarios corporativos.
+- Incorporación de capacidades de procesamiento inteligente de documentos.
+- Publicación de una solución accesible mediante una aplicación web desplegada en Microsoft Azure.
+
+## 11. Conclusiones
 
 El desarrollo de AURA permitió construir un prototipo de asistente corporativo que facilita el acceso a la información de Distribuidora Río Claro mediante consultas en lenguaje natural.
 
@@ -228,4 +261,8 @@ Asimismo, se incorporó un módulo de facturas que amplía las posibilidades de 
 
 Este proyecto demuestra cómo las herramientas de inteligencia artificial de Microsoft Azure pueden aplicarse a situaciones reales de una empresa para mejorar el acceso a la información, agilizar consultas y apoyar las actividades operativas.
 
-Finalmente, AURA representa una primera etapa de transformación digital para Distribuidora Río Claro, con posibilidades de crecimiento mediante nuevas integraciones y funcionalidades.
+AURA representa una primera etapa de transformación digital para Distribuidora Río Claro, con posibilidades de crecimiento mediante nuevas integraciones y funcionalidades.
+
+La solución desarrollada demuestra que las capacidades de Inteligencia Artificial de Microsoft Azure pueden utilizarse para resolver problemas empresariales reales relacionados con acceso a la información, automatización documental y apoyo operativo.
+
+La arquitectura implementada constituye una base escalable para futuras iniciativas de transformación digital dentro de Distribuidora Río Claro.
