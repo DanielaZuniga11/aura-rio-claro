@@ -180,7 +180,7 @@ La validación se realizó utilizando documentos PDF de ejemplo y facturas ficti
 - Azure OpenAI.
 - Fuentes de conocimiento empresariales.
 - Módulo de facturas.
-- Azure AI Document Intelligence (integración prevista).
+- Azure AI Document Intelligence (validado mediante pruebas de procesamiento documental).
 
 ## 8. Acceso al prototipo
 
