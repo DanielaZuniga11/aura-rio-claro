@@ -194,37 +194,45 @@ La aplicación permite acceder al asistente corporativo, realizar consultas sobr
 
 Se presentan las evidencias de las pruebas realizadas y de las funcionalidades desarrolladas en AURA.
 
-### 9.1. Consulta de inventario
+### 9.1. Página principal de AURA
+
+Evidencia de la interfaz principal del asistente corporativo AURA desplegado en Microsoft Azure App Service.
+
+La página muestra las consultas rápidas disponibles para el usuario, así como el acceso al módulo de procesamiento inteligente de facturas.
+
+![Consulta Pagina Principal](evidencias/pagina-principal.png)
+
+### 9.2. Consulta de inventario
 
 Evidencia de una consulta realizada al asistente para obtener información sobre los productos y las existencias de Distribuidora Río Claro.
 
 ![Consulta de inventario](evidencias/consulta-inventario.png)
 
-### 9.2. Información corporativa
+### 9.3. Información corporativa
 
 Evidencia de una consulta sobre Distribuidora Río Claro, utilizando las fuentes de conocimiento incorporadas al asistente.
 
 ![Consulta sobre Río Claro](evidencias/consulta-rio-claro.png)
 
-### 9.3. Política de devoluciones
+### 9.4. Política de devoluciones
 
 Evidencia de una consulta sobre las condiciones y procedimientos de devolución de la empresa.
 
 ![Consulta sobre políticas de devoluciones](evidencias/09-politica-devoluciones.png)
 
-### 9.4. Módulo de facturas
+### 9.5. Módulo de facturas
 
 Evidencia de la interfaz destinada a la carga y consulta de facturas.
 
 ![Módulo de facturas](evidencias/consulta-facturas.png)
 
-### 9.5. Resultado del análisis de factura
+### 9.6. Resultado del análisis de factura
 
 Evidencia del resultado mostrado durante la prueba de análisis de una factura.
 
 ![Factura analizada](evidencias/consulta-factura-analizada.png)
 
-### 9.6. Azure AI Document Intelligence Studio
+### 9.7. Azure AI Document Intelligence Studio
 
 Evidencia del entorno de Document Intelligence Studio considerado para el procesamiento inteligente de documentos.
 
