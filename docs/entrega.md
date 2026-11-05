@@ -33,11 +33,13 @@ El asistente busca:
 
 ## 3. Solución desarrollada
 
-Se desarrolló un asistente inteligente llamado **AgenteDeConocimientoEmpresarial**, utilizando Microsoft Foundry.
+## 3. Solución desarrollada
 
-El asistente permite que los usuarios realicen preguntas en lenguaje natural y obtengan respuestas a partir de los documentos y archivos de información de Distribuidora Río Claro.
+Se desarrolló **AURA (Asistente Unificado de Respuestas y Atención)**, un asistente corporativo basado en Azure AI Foundry y Azure OpenAI que permite consultar información empresarial mediante lenguaje natural. 
 
-Las fuentes de información incorporadas incluyen:
+La solución se presenta mediante una aplicación web que integra dos funcionalidades principales: un asistente corporativo para consultar información de la empresa y un módulo para el procesamiento inteligente de facturas mediante Azure AI Document Intelligence.
+
+Las fuentes de información incorporadas al asistente incluyen:
 
 - Catálogo de productos.
 - Inventario de las sucursales.
@@ -48,52 +50,182 @@ Las fuentes de información incorporadas incluyen:
 
 De esta manera, el personal puede consultar información de distintas áreas desde un solo asistente, sin tener que buscar manualmente en cada archivo.
 
-## 4. Herramientas y tecnologías
+### 3.1. Casos de uso implementados
 
-Para desarrollar el proyecto se utilizaron las siguientes herramientas:
+**Caso de uso 1: Asistente Corporativo AURA**
 
-- **Microsoft Foundry:** creación y configuración del agente inteligente.
-- **Modelo de inteligencia artificial:** permite comprender las preguntas de los usuarios y generar respuestas.
-- **Fuentes de conocimiento:** archivos empresariales utilizados por el agente para consultar información.
-- **Visual Studio Code:** edición y adaptación de los archivos del proyecto.
-- **Node.js:** ejecución de la aplicación web.
-- **Microsoft Azure App Service:** servicio de Azure considerado para publicar la aplicación y permitir su acceso mediante un enlace web.
+Permite realizar consultas empresariales mediante una interfaz conversacional. Sus principales funciones son:
+
+- Consulta de inventario.
+- Estado de pedidos.
+- Información corporativa.
+- Consulta de devoluciones y procedimientos.
+
+**Caso de uso 2: Procesamiento Inteligente de Facturas**
+
+Se incorporó un módulo independiente para mostrar el flujo de procesamiento documental de facturas. Sus funcionalidades contempladas son:
+
+- Carga de facturas en formato PDF.
+- Análisis documental.
+- Identificación de campos clave.
+- Simulación del procesamiento de información empresarial.
+
+### 3.2. Arquitectura de la solución
+
+La solución se organiza en dos flujos principales:
+
+**Flujo 1. Asistente corporativo**
+
+Usuario → Aplicación Web AURA → Azure AI Foundry → Azure OpenAI → Base de conocimiento.
+
+**Flujo 2. Procesamiento de facturas**
+
+Usuario → Módulo de Facturas → Azure AI Document Intelligence.
+
+Esta arquitectura permite separar las consultas empresariales del procesamiento documental, manteniendo ambas funcionalidades dentro de una misma solución web.
+
+## 4. Herramientas y tecnologías utilizadas
+
+Para el desarrollo de AURA se utilizaron las siguientes herramientas y servicios:
+
+- **Microsoft Azure:** plataforma de servicios en la nube.
+- **Azure AI Foundry:** configuración y administración del agente inteligente.
+- **Azure OpenAI:** modelo de inteligencia artificial utilizado para comprender las consultas y generar respuestas.
+- **Azure AI Document Intelligence:** servicio considerado para el análisis y extracción de información de documentos y facturas.
+- **Azure App Service:** publicación y alojamiento de la aplicación web.
+- **Visual Studio Code:** entorno de desarrollo utilizado para editar y organizar el proyecto.
+- **GitHub Copilot:** apoyo en la generación, adaptación y corrección del código.
+- **Node.js:** entorno de ejecución de la aplicación web.
+
+La integración de estas herramientas permitió desarrollar una solución que combina inteligencia artificial conversacional y procesamiento documental.
 
 ## 5. Pruebas realizadas
 
-Se realizaron consultas al asistente para comprobar que puede recuperar información de las fuentes de conocimiento incorporadas.
+Se realizaron pruebas de funcionamiento en la aplicación web AURA para comprobar la interacción con el agente inteligente y el acceso a las diferentes funcionalidades.
 
-Durante las pruebas se verificó que:
+Las pruebas del asistente corporativo incluyeron:
 
-- El asistente puede responder preguntas relacionadas con los productos.
-- Puede consultar información del inventario.
-- Puede proporcionar información sobre pedidos y proveedores.
-- Puede responder preguntas sobre la política de devoluciones.
-- Puede utilizar las preguntas frecuentes como fuente de información.
+Consultas sobre productos e inventario.
 
-Las pruebas permitieron comprobar que el agente puede consultar diferentes archivos empresariales y utilizar su contenido para generar respuestas en lenguaje natural.
+Consultas sobre el estado de los pedidos.
+
+Preguntas sobre la empresa.
+
+Consultas sobre la política de devoluciones.
+
+Recuperación de información desde las distintas fuentes de conocimiento.
+
+También se verificó el funcionamiento de la navegación entre la página principal y el módulo de facturas.
+
+El prototipo fue probado localmente y posteriormente publicado como una aplicación web accesible mediante internet.
+
+El módulo de facturas cuenta con una interfaz de demostración para la carga y presentación del flujo de análisis documental. La integración con Azure AI Document Intelligence queda sujeta a su implementación y validación.
 
 ## 6. Uso responsable de la inteligencia artificial
 
-El asistente está diseñado para apoyar al personal de Distribuidora Río Claro, no para sustituir sus decisiones.
+AURA fue diseñado como una herramienta de apoyo para el personal de Distribuidora Río Claro, con el propósito de facilitar el acceso a la información y mejorar la atención, sin sustituir la supervisión ni las decisiones humanas.
 
-Para promover un uso responsable:
+Para promover un uso responsable de la inteligencia artificial, se consideran los siguientes principios:
 
-- Las respuestas deben basarse en la información disponible en las fuentes de conocimiento.
-- Si no encuentra información suficiente, debe indicarlo en lugar de inventar una respuesta.
-- Las decisiones importantes deben ser revisadas por una persona.
-- Las políticas de la empresa deben respetarse.
-- La información confidencial debe manejarse con cuidado.
-- El asistente funciona como una herramienta de consulta y apoyo para los empleados.
+Transparencia: el usuario debe saber que está interactuando con un asistente basado en inteligencia artificial.
 
-### Objetivo de publicación
+Confiabilidad: las respuestas deben fundamentarse en la información disponible en las fuentes de conocimiento.
 
-El prototipo deberá estar disponible mediante una aplicación web publicada en Microsoft Azure, accesible a través de un enlace funcional.
+Honestidad: cuando no exista información suficiente, el asistente debe indicarlo y evitar generar datos no comprobados.
 
-La entrega final incluirá:
+Supervisión humana: las decisiones administrativas y financieras deben permanecer bajo responsabilidad del personal autorizado.
 
-- Aplicación web publicada y operativa.
-- Conexión funcional con el agente de Microsoft Foundry.
-- Acceso al asistente mediante un enlace web.
-- Pruebas de funcionamiento desde la aplicación publicada.
-- Capturas de pantalla que demuestren su funcionamiento.
+Privacidad: la información empresarial y los datos confidenciales deben manejarse de manera segura.
+
+Apoyo al personal: la inteligencia artificial busca facilitar las actividades de los empleados, no reemplazar su experiencia y criterio.
+
+## 7. Arquitectura y funcionamiento de AURA
+
+La solución está compuesta por una aplicación web que integra dos módulos independientes.
+
+### 7.1. Flujo del asistente corporativo
+
+1. El usuario ingresa a la aplicación web AURA.
+2. Selecciona una consulta rápida o escribe una pregunta en el chat.
+3. La solicitud se envía al agente configurado en Azure AI Foundry.
+4. El agente utiliza Azure OpenAI para interpretar la consulta y generar una respuesta.
+5. Cuando es necesario, consulta las fuentes de conocimiento empresariales.
+6. La respuesta se presenta al usuario en la aplicación web.
+
+### 7.2. Flujo del módulo de facturas
+
+1. El usuario ingresa al módulo de facturas.
+2. Selecciona un documento PDF para cargarlo.
+3. La interfaz presenta el flujo de análisis documental.
+4. Se contempla el uso de Azure AI Document Intelligence para identificar información relevante de la factura.
+
+La integración completa con el servicio de análisis documental queda pendiente de implementación y validación.
+
+### 7.3. Componentes principales
+
+- Aplicación web AURA.
+- Agente de Azure AI Foundry.
+- Azure OpenAI.
+- Fuentes de conocimiento empresariales.
+- Módulo de facturas.
+- Azure AI Document Intelligence (integración prevista).
+
+## 8. Acceso al prototipo
+
+El prototipo AURA se encuentra publicado como una aplicación web en Microsoft Azure.
+
+**Enlace de acceso:** https://chatbot-foundry-catalina-20261004-2223.azurewebsites.net
+
+La aplicación permite acceder al asistente corporativo, realizar consultas sobre la información de Distribuidora Río Claro y navegar al módulo de facturas.
+
+## 9. Evidencias del proyecto
+
+Se presentan las evidencias de las pruebas realizadas y de las funcionalidades desarrolladas en AURA.
+
+### 9.1. Consulta de inventario
+
+Evidencia de una consulta realizada al asistente para obtener información sobre los productos y las existencias de Distribuidora Río Claro.
+
+![Consulta de inventario](evidencias/consulta-inventario.png)
+
+### 9.2. Información corporativa
+
+Evidencia de una consulta sobre Distribuidora Río Claro, utilizando las fuentes de conocimiento incorporadas al asistente.
+
+![Consulta sobre Río Claro](evidencias/consulta-rio-claro.png)
+
+### 9.3. Política de devoluciones
+
+Evidencia de una consulta sobre las condiciones y procedimientos de devolución de la empresa.
+
+![Consulta sobre políticas de devoluciones](evidencias/09-politica-devoluciones.png)
+
+### 9.4. Módulo de facturas
+
+Evidencia de la interfaz destinada a la carga y consulta de facturas.
+
+![Módulo de facturas](evidencias/consulta-facturas.png)
+
+### 9.5. Resultado del análisis de factura
+
+Evidencia del resultado mostrado durante la prueba de análisis de una factura.
+
+![Factura analizada](evidencias/consulta-factura-analizada.png)
+
+### 9.6. Azure AI Document Intelligence Studio
+
+Evidencia del entorno de Document Intelligence Studio considerado para el procesamiento inteligente de documentos.
+
+![Document Intelligence Studio](evidencias/document-intelligence-studio.png)
+
+## 10. Conclusiones
+
+El desarrollo de AURA permitió construir un prototipo de asistente corporativo que facilita el acceso a la información de Distribuidora Río Claro mediante consultas en lenguaje natural.
+
+La integración de Azure AI Foundry y Azure OpenAI permitió implementar una solución conversacional capaz de consultar diferentes fuentes de información empresarial desde una aplicación web.
+
+Asimismo, se incorporó un módulo de facturas que amplía las posibilidades de la solución hacia el procesamiento inteligente de documentos, contemplando el uso de Azure AI Document Intelligence.
+
+Este proyecto demuestra cómo las herramientas de inteligencia artificial de Microsoft Azure pueden aplicarse a situaciones reales de una empresa para mejorar el acceso a la información, agilizar consultas y apoyar las actividades operativas.
+
+Finalmente, AURA representa una primera etapa de transformación digital para Distribuidora Río Claro, con posibilidades de crecimiento mediante nuevas integraciones y funcionalidades.
