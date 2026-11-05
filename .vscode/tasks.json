@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Instalar dependencias del chatbot",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crear respaldo frontend antes de edición",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs = require('node:fs'); for (const file of ['public/index.html', 'public/app.js', 'public/styles.css']) fs.copyFileSync(file, `BACKUP_FUNCIONAL/frontend_${file.split('/').pop()}`);"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

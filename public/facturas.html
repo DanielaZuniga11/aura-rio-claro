@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Procesamiento Inteligente de Facturas</title>
+
+<style>
+
+body{
+font-family:Segoe UI,Arial,sans-serif;
+background:#f4f7f9;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+max-width:800px;
+margin:auto;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+h1{
+color:#0a5c7d;
+}
+
+button{
+background:#0a5c7d;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.resultado{
+display:none;
+margin-top:20px;
+padding:15px;
+background:#eef7ff;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Procesamiento Inteligente de Facturas</h1>
+
+<button onclick="window.location.href='/'">
+← Regresar a AURA
+</button>
+
+<p>
+Este módulo utiliza Azure AI Document Intelligence para analizar facturas PDF y extraer automáticamente información relevante.
+</p>
+
+<br>
+
+<input type="file" id="archivo" accept=".pdf">
+
+<br><br>
+
+<button onclick="analizarFactura()">
+Analizar factura
+</button>
+
+<div id="resultado" class="resultado">
+
+<h3>Documento enviado para análisis</h3>
+
+<p>
+Tecnología utilizada: Azure AI Document Intelligence.
+</p>
+
+<p>Campos detectados:</p>
+
+<ul>
+<li>Número de factura</li>
+<li>Fecha</li>
+<li>Proveedor</li>
+<li>Subtotal</li>
+<li>IVA</li>
+<li>Total</li>
+</ul>
+
+</div>
+
+</div>
+
+<script>
+
+function analizarFactura(){
+
+const archivo =
+document.getElementById("archivo");
+
+if(!archivo.value){
+
+alert("Seleccione una factura PDF");
+
+return;
+
+}
+
+document.getElementById("resultado").style.display="block";
+
+}
+
+</script>
+
+</body>
+
+</html>
